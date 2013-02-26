@@ -17,7 +17,8 @@
 		0429B69B16DD04120091F0B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429B69A16DD04120091F0B1 /* Default@2x.png */; };
 		0429B69D16DD04120091F0B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0429B69C16DD04120091F0B1 /* Default-568h@2x.png */; };
 		0429B6A016DD04120091F0B1 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0429B69E16DD04120091F0B1 /* MainStoryboard.storyboard */; };
-		0429B6A316DD04130091F0B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429B6A216DD04130091F0B1 /* ViewController.m */; };
+		0429B6AB16DD04680091F0B1 /* DemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429B6AA16DD04680091F0B1 /* DemoTableViewController.m */; };
+		0429B6AE16DD04A20091F0B1 /* UIScrollView+ZGPullDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0429B6AD16DD04A20091F0B1 /* UIScrollView+ZGPullDrag.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +36,10 @@
 		0429B69A16DD04120091F0B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0429B69C16DD04120091F0B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0429B69F16DD04120091F0B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0429B6A116DD04130091F0B1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0429B6A216DD04130091F0B1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0429B6A916DD04680091F0B1 /* DemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewController.h; sourceTree = "<group>"; };
+		0429B6AA16DD04680091F0B1 /* DemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewController.m; sourceTree = "<group>"; };
+		0429B6AC16DD04A20091F0B1 /* UIScrollView+ZGPullDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+ZGPullDrag.h"; path = "ZGPullDragScrollViewClass/UIScrollView+ZGPullDrag.h"; sourceTree = "<group>"; };
+		0429B6AD16DD04A20091F0B1 /* UIScrollView+ZGPullDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+ZGPullDrag.m"; path = "ZGPullDragScrollViewClass/UIScrollView+ZGPullDrag.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,8 @@
 		0429B67A16DD04120091F0B1 = {
 			isa = PBXGroup;
 			children = (
+				0429B6AC16DD04A20091F0B1 /* UIScrollView+ZGPullDrag.h */,
+				0429B6AD16DD04A20091F0B1 /* UIScrollView+ZGPullDrag.m */,
 				0429B68C16DD04120091F0B1 /* ZGPullDragScrollView */,
 				0429B68516DD04120091F0B1 /* Frameworks */,
 				0429B68416DD04120091F0B1 /* Products */,
@@ -83,11 +88,11 @@
 		0429B68C16DD04120091F0B1 /* ZGPullDragScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				0429B6A916DD04680091F0B1 /* DemoTableViewController.h */,
+				0429B6AA16DD04680091F0B1 /* DemoTableViewController.m */,
 				0429B69516DD04120091F0B1 /* AppDelegate.h */,
 				0429B69616DD04120091F0B1 /* AppDelegate.m */,
 				0429B69E16DD04120091F0B1 /* MainStoryboard.storyboard */,
-				0429B6A116DD04130091F0B1 /* ViewController.h */,
-				0429B6A216DD04130091F0B1 /* ViewController.m */,
 				0429B68D16DD04120091F0B1 /* Supporting Files */,
 			);
 			path = ZGPullDragScrollView;
@@ -175,7 +180,8 @@
 			files = (
 				0429B69316DD04120091F0B1 /* main.m in Sources */,
 				0429B69716DD04120091F0B1 /* AppDelegate.m in Sources */,
-				0429B6A316DD04130091F0B1 /* ViewController.m in Sources */,
+				0429B6AB16DD04680091F0B1 /* DemoTableViewController.m in Sources */,
+				0429B6AE16DD04A20091F0B1 /* UIScrollView+ZGPullDrag.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
