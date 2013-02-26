@@ -9,10 +9,10 @@
 #import "UIScrollView+ZGPullDrag.h"
 #import <objc/runtime.h>
 
-static char UITableViewZGPullDragViewDelegate;
-static char UITableViewZGPullDragViewObserving;
-static char UITableViewZGPullView;
-static char UITableViewZGDragView;
+static char UIScrollViewZGPullDragViewDelegate;
+static char UIScrollViewZGPullDragViewObserving;
+static char UIScrollViewZGPullView;
+static char UIScrollViewZGDragView;
 
 @interface UIScrollView (ZGPullDragPropertyCategory)
 @property (nonatomic) BOOL isObserving;
@@ -35,14 +35,14 @@ static char UITableViewZGDragView;
     }
     
     [self willChangeValueForKey:@"isObserving"];
-    objc_setAssociatedObject(self, &UITableViewZGPullDragViewObserving,
+    objc_setAssociatedObject(self, &UIScrollViewZGPullDragViewObserving,
                              [NSNumber numberWithBool:isObserving],
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:@"isObserving"];
 }
 
 - (BOOL)isObserving {
-    NSNumber *number = objc_getAssociatedObject(self, &UITableViewZGPullDragViewObserving);
+    NSNumber *number = objc_getAssociatedObject(self, &UIScrollViewZGPullDragViewObserving);
     if (number == nil) {
         return NO;
     } else {
@@ -52,22 +52,22 @@ static char UITableViewZGDragView;
 
 - (void)setPullView:(UIView *)pullView{
     [self willChangeValueForKey:@"pullView"];
-    objc_setAssociatedObject(self, &UITableViewZGPullView, pullView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &UIScrollViewZGPullView, pullView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:@"pullView"];
 }
 
 - (UIView *)pullView{
-    return objc_getAssociatedObject(self, &UITableViewZGPullView);
+    return objc_getAssociatedObject(self, &UIScrollViewZGPullView);
 }
 
 - (void)setDragView:(UIView *)dragView{
     [self willChangeValueForKey:@"dragView"];
-    objc_setAssociatedObject(self, &UITableViewZGDragView, dragView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &UIScrollViewZGDragView, dragView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:@"dragView"];
 }
 
 - (UIView *)dragView{
-    return objc_getAssociatedObject(self, &UITableViewZGDragView);
+    return objc_getAssociatedObject(self, &UIScrollViewZGDragView);
 }
 
 @end
@@ -78,12 +78,12 @@ static char UITableViewZGDragView;
 
 - (void)setPullDragDelegate:(id<ZGPullDragViewDelegate>)pullDragDelegate{
     [self willChangeValueForKey:@"pullDragDelegate"];
-    objc_setAssociatedObject(self, &UITableViewZGPullDragViewDelegate, pullDragDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &UIScrollViewZGPullDragViewDelegate, pullDragDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self didChangeValueForKey:@"pullDragDelegate"];
 }
 
 - (id<ZGPullDragViewDelegate>)pullDragDelegate{
-    return objc_getAssociatedObject(self, &UITableViewZGPullDragViewDelegate);
+    return objc_getAssociatedObject(self, &UIScrollViewZGPullDragViewDelegate);
 }
 
 - (void)addZGPullView:(UIView *)pullView{
