@@ -116,7 +116,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView reloadData];
-    [self configPullDragView];
 }
 
 - (void)viewDidLoad

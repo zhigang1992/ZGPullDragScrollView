@@ -10,6 +10,7 @@
 
 @protocol ZGPullDragViewDelegate <NSObject>
 @optional
+
 //Push Down
 - (void)pullView:(UIView *)pullView Show:(CGFloat )shownPixels ofTotal:(CGFloat )totalPixels;
 - (void)pullView:(UIView *)pullView hangForCompletionBlock:(void (^)())completed;
@@ -17,6 +18,11 @@
 //Drag Up
 - (void)dragView:(UIView *)dragView Show:(CGFloat )showPixels ofTotal:(CGFloat )totalPixels;
 - (void)dragView:(UIView *)dragView hangForCompletionBlock:(void (^)())completed;
+
+//User Pull or Drag stopped
+
+- (void)userPullOrDragStoppedWithPullView:(UIView *)pullView dragView:(UIView *)dragView;
+
 @end
 
 @interface UIScrollView (ZGPullDrag)
