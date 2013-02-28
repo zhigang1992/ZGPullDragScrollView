@@ -109,7 +109,7 @@ static char UIScrollViewWasDragging;
         [self.pullView removeFromSuperview];
     }
     pullView.frame = CGRectOffset(pullView.frame, -pullView.frame.origin.x, -pullView.frame.origin.y-pullView.frame.size.height);
-    [self addSubview:pullView];
+    [self insertSubview:pullView atIndex:0];
     self.pullView = pullView;
     self.isObserving = YES;
 }
@@ -147,11 +147,13 @@ static char UIScrollViewWasDragging;
         [self dragViewHandler:yOffset-(self.dragView.frame.origin.y - self.frame.size.height)];
     }
     if (self.wasDragging && !self.isDragging) {
+        self.wasDragging = self.isDragging;
         if ([self.pullDragDelegate respondsToSelector:@selector(userPullOrDragStoppedWithPullView:dragView:)]) {
             [self.pullDragDelegate userPullOrDragStoppedWithPullView:self.pullView dragView:self.dragView];
         }
+    } else {
+        self.wasDragging = self.isDragging;
     }
-    self.wasDragging = self.isDragging;
 }
 
 
@@ -160,8 +162,6 @@ static char UIScrollViewWasDragging;
         [self addZGDragView:self.dragView];
     }
 }
-
-
 
 - (void)pullViewHandler:(CGFloat )visiblePixels{
     if ([self.pullDragDelegate respondsToSelector:@selector(pullView:Show:ofTotal:)]) {
